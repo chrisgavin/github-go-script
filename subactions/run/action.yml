@@ -1,0 +1,12 @@
+name: GitHub Go Script - Run
+description: Runs the Go script.
+runs:
+  using: node16
+  main: ./../../bootstrap-shim.js
+inputs:
+  token:
+    description: A token for GitHub API access.
+    required: true
+  dir:
+    description: The directory containing your Go script to run.
+    required: true

@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: The tag to release.
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
+      - name: Prepare NodeJS
+        uses: chrisgavin/nodejs-prepare-action@5a9adfe1877a3a3f114772464efcc7d20df36847
+      - name: Install Dependencies
+        run: npm ci
+      - name: Create the Release
+        uses: chrisgavin/build-javascript-action-action@6ff78fb70769e6437c74a7a87712b6b0eb18c17f
+        with:
+          tag: ${{ github.event.inputs.tag }}

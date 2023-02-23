@@ -1,0 +1,27 @@
+{
+	"name": "github-python-script-action",
+	"version": "0.0.0",
+	"description": "An action similar to actions/github-script that lets you use Python as the scripting language.",
+	"scripts": {
+		"build": "tsc",
+		"lint": "eslint --max-warnings=0 ./src/",
+		"test": "jest",
+		"bootstrap": "npm install && npm run build && npm prune --production"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@actions/core": "^1.10.0",
+		"@actions/exec": "^1.1.1",
+		"source-map-support": "^0.5.21"
+	},
+	"devDependencies": {
+		"@types/jest": "^27.4.1",
+		"@types/source-map-support": "^0.5.6",
+		"@typescript-eslint/eslint-plugin": "^4.33.0",
+		"eslint": "^7.32.0",
+		"jest": "^26.6.3",
+		"ts-jest": "^26.5.6",
+		"ts-node": "^10.9.1",
+		"typescript": "^4.9.5"
+	}
+}
