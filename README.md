@@ -5,7 +5,7 @@ An action similar to actions/github-script that lets you use Go as the scripting
 
 To get up and running with a new workflow, simply run:
 
-    go run github.com/dsp-testing/github-go-script/gen workflow
+    go run github.com/dsp-testing/github-go-script/gen@latest workflow
 
 This will create:
 
