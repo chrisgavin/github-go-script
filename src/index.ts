@@ -1,7 +1,5 @@
 import * as core from "@actions/core";
 import * as exec from "@actions/exec";
-import {promises as fsPromises} from "fs";
-import * as path from "path";
 import sourceMapSupport from "source-map-support";
 
 import * as inputs from "./inputs";
