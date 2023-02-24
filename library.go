@@ -105,7 +105,7 @@ func Call(r run) {
 
 	err = r(options)
 	if err != nil {
-		fmt.Fprintln(err, os.Stderr)
+		fmt.Fprintf(os.Stderr, "%s", err)
 		os.Exit(1)
 	}
 }
