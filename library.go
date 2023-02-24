@@ -56,7 +56,7 @@ func MustUint64(input string) uint64 {
 	return i
 }
 
-type run func(options *Options) error
+type run func(options *Options) (map[string]string, error)
 
 func Call(r run) {
 	ctx := context.Background()
@@ -103,9 +103,23 @@ func Call(r run) {
 		Context: gitHubContext,
 	}
 
-	err = r(options)
+	outputs, err := r(options)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%s", err)
 		os.Exit(1)
+	}
+
+	// Open the file at the path specified by the environment variable $GITHUB_OUTPUT in append mode and write each entry in outputs in the format {name}={value}
+	outputFile, err := os.OpenFile(os.Getenv("GITHUB_OUTPUT"), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		panic(err)
+	}
+	defer outputFile.Close()
+
+	for name, value := range outputs {
+		_, err = fmt.Fprintf(outputFile, "%s=%s", name, value)
+		if err != nil {
+			panic(err)
+		}
 	}
 }
