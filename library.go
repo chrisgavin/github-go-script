@@ -3,7 +3,7 @@ package github_go_script
 import (
 	"context"
 	"encoding/json"
-	"log"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -105,6 +105,7 @@ func Call(r run) {
 
 	err = r(options)
 	if err != nil {
-		log.Fatalln(err)
+		fmt.Fprintln(err, os.Stderr)
+		os.Exit(1)
 	}
 }
