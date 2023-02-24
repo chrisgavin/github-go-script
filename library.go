@@ -110,7 +110,7 @@ func Call(r run) {
 	}
 
 	// Open the file at the path specified by the environment variable $GITHUB_OUTPUT in append mode and write each entry in outputs in the format {name}={value}
-	outputFile, err := os.OpenFile(os.Getenv("GITHUB_OUTPUT"), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	outputFile, err := os.OpenFile(os.Getenv("GITHUB_ENV"), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		panic(err)
 	}
