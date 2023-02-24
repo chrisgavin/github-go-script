@@ -3,6 +3,7 @@ package github_go_script
 import (
 	"context"
 	"encoding/json"
+	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -104,6 +105,6 @@ func Call(r run) {
 
 	err = r(options)
 	if err != nil {
-		panic(err)
+		log.Fatalln(err)
 	}
 }
