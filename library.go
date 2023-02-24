@@ -117,7 +117,7 @@ func Call(r run) {
 	defer outputFile.Close()
 
 	for name, value := range outputs {
-		_, err = fmt.Fprintf(outputFile, "%s=%s", name, value)
+		_, err = fmt.Fprintf(outputFile, "%s=%s\n", name, value)
 		if err != nil {
 			panic(err)
 		}
