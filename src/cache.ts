@@ -9,7 +9,7 @@ async function cachePaths(existingOnly:boolean):Promise<string[]> {
 		path += stdout;
 	});
 
-	const paths:string[] = [path];
+	const paths:string[] = [path.trim()];
 	if (!existingOnly) {
 		return paths;
 	}
