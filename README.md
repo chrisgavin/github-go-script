@@ -1,2 +1,2 @@
-# GitHub Python Script Action
-An action similar to actions/github-script that lets you use Python as the scripting language.
+# GitHub Go Script Action
+An action similar to actions/github-script that lets you use Go as the scripting language.

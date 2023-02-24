@@ -1,7 +1,7 @@
 {
-	"name": "github-python-script-action",
+	"name": "github-go-script-action",
 	"version": "0.0.0",
-	"description": "An action similar to actions/github-script that lets you use Python as the scripting language.",
+	"description": "An action similar to actions/github-script that lets you use Go as the scripting language.",
 	"scripts": {
 		"build": "tsc",
 		"lint": "eslint --max-warnings=0 ./src/",
