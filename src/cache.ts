@@ -5,8 +5,13 @@ import * as exec from "@actions/exec";
 
 async function cachePaths(existingOnly:boolean):Promise<string[]> {
 	let path = "";
-	exec.exec("go", ["env", "GOMODCACHE"]).then((stdout) => {
-		path += stdout;
+	exec.exec("go", ["env", "GOMODCACHE"], {
+		silent: true,
+		listeners: {
+			stdout: (data) => {
+				path += data.toString();
+			}
+		},
 	});
 
 	const paths:string[] = [path.trim()];
