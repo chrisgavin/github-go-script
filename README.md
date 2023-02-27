@@ -1,6 +1,11 @@
 # GitHub Go Script Action
 An action similar to actions/github-script that lets you use Go as the scripting language.
 
+## Authors
+
+* [Chris Gavin](https://github.com/chrisgavin)
+*  [Robin Neatherway](https://github.com/rneatherway)
+
 ## Quickstart
 
 To get up and running with a new workflow, simply run:
