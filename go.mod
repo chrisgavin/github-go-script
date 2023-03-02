@@ -1,4 +1,4 @@
-module github.com/dsp-testing/github-go-script
+module github.com/chrisgavin/github-go-script
 
 go 1.20
 

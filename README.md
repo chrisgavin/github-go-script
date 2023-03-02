@@ -4,13 +4,13 @@ An action similar to actions/github-script that lets you use Go as the scripting
 ## Authors
 
 * [Chris Gavin](https://github.com/chrisgavin)
-*  [Robin Neatherway](https://github.com/rneatherway)
+* [Robin Neatherway](https://github.com/rneatherway)
 
 ## Quickstart
 
 To get up and running with a new workflow, simply run:
 
-    go run github.com/dsp-testing/github-go-script/gen@latest workflow
+    go run github.com/chrisgavin/github-go-script/gen@latest workflow
 
 This will create:
 
