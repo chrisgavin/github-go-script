@@ -13,7 +13,7 @@ const (
 import (
 	"fmt"
 
-	github_go_script "github.com/dsp-testing/github-go-script"
+	github_go_script "github.com/chrisgavin/github-go-script"
 )
 
 func main() {
@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: dsp-testing/github-go-script@main
+      - uses: chrisgavin/github-go-script@main
         with:
           dir: .github/workflows/{{ .Name }}
 `
@@ -89,7 +89,7 @@ func realMain() error {
 		return err
 	}
 
-	if out, err := exec.Command("go", "get", "github.com/dsp-testing/github-go-script").CombinedOutput(); err != nil {
+	if out, err := exec.Command("go", "get", "github.com/chrisgavin/github-go-script").CombinedOutput(); err != nil {
 		fmt.Fprintln(os.Stderr, string(out))
 		return err
 	}
