@@ -4,7 +4,7 @@ runs:
   using: composite
   steps:
     - name: Setup Go
-      uses: actions/setup-go@6c1fd22b67f7a7c42ad9a45c0f4197434035e429
+      uses: actions/setup-go@41dfa10bad2bb2ae585af6ee5bb4d7d973ad74ed
       with:
         go-version: 1.20.1
     # We cannot reference $GITHUB_ACTION_PATH in the path to other actions, but we can symlink it to a known location and then reference that location.
